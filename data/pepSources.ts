@@ -1,0 +1,51 @@
+export const PEP_SOURCES = [
+  {
+    id: 'reuters-2026',
+    title: 'Pepkor half-year earnings rise 10.3%',
+    publisher: 'Reuters',
+    date: 'May 2026',
+    url: 'https://www.reuters.com/world/africa/south-africas-pepkor-half-year-earnings-rise-103-2026-05-26/',
+  },
+  {
+    id: 'pepkor-integrated-2025',
+    title: 'Pepkor Integrated Report 2025',
+    publisher: 'Pepkor',
+    date: '2025',
+    url: 'https://pepkor.co.za/wp-content/uploads/Pepkor-integrated-report-2025.pdf',
+  },
+  {
+    id: 'pepkor-results',
+    title: 'Pepkor Annual Results',
+    publisher: 'Pepkor',
+    date: '2025',
+    url: 'https://pepkor.co.za/wp-content/uploads/Pepkor_annual-results.pdf',
+  },
+  {
+    id: 'pepkor-affordable',
+    title: 'Enabling Affordable Living',
+    publisher: 'Pepkor',
+    date: '2025',
+    url: 'https://pepkor.co.za/wp-content/uploads/Enabling-affordable-living.pdf',
+  },
+  {
+    id: 'pepstores',
+    title: 'PEP Stores',
+    publisher: 'PEP',
+    date: '2025',
+    url: 'https://www.pepstores.com/',
+  },
+  {
+    id: 'pepcell',
+    title: 'PEP Cell',
+    publisher: 'PEP',
+    date: '2025',
+    url: 'https://pepcell.com/',
+  },
+  {
+    id: 'paxi',
+    title: 'PAXI Parcel Service',
+    publisher: 'PEP / PAXI',
+    date: '2025',
+    url: 'https://www.paxi.co.za/',
+  },
+];
