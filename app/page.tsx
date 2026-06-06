@@ -595,35 +595,32 @@ export default function Page() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <div className="rounded-2xl shadow-lg overflow-hidden border border-[#071A2F]/10 bg-white">
-              {/* header — desktop only */}
-              <div className="hidden md:grid grid-cols-3 bg-[#071A2F]">
-                <span className="px-6 py-4 font-mono text-xs tracking-widest uppercase text-[#FFD200]">Feature</span>
-                <span className="px-6 py-4 font-mono text-xs tracking-widest uppercase text-[#FFD200]">Advantage</span>
-                <span className="px-6 py-4 font-mono text-xs tracking-widest uppercase text-[#FFD200]">Benefit</span>
-              </div>
-              {FAB_ROWS.map((row, i) => (
-                <div
-                  key={i}
-                  className={`block md:grid md:grid-cols-3 border-b-8 md:border-b border-[#F4F6F8] md:border-[#071A2F]/5 last:border-b-0 ${
-                    i % 2 === 0 ? 'bg-white' : 'md:bg-[#F4F6F8]/50'
-                  }`}
-                >
-                  <div className="px-6 py-4 md:py-5 border-b border-[#071A2F]/5 md:border-b-0">
-                    <div className="md:hidden font-mono text-[10px] tracking-widest uppercase text-[#00843D] mb-1.5">Feature</div>
-                    <div className="text-[#071A2F] font-medium leading-relaxed text-sm">{row.feature}</div>
-                  </div>
-                  <div className="px-6 py-4 md:py-5 border-b border-[#071A2F]/5 md:border-b-0">
-                    <div className="md:hidden font-mono text-[10px] tracking-widest uppercase text-[#00843D] mb-1.5">Advantage</div>
-                    <div className="text-[#1F2933]/70 leading-relaxed text-sm">{row.advantage}</div>
-                  </div>
-                  <div className="px-6 py-4 md:py-5">
-                    <div className="md:hidden font-mono text-[10px] tracking-widest uppercase text-[#00843D] mb-1.5">Benefit</div>
-                    <div className="text-[#00843D] leading-relaxed font-medium text-sm">{row.benefit}</div>
-                  </div>
-                </div>
-              ))}
+            <div className="overflow-x-auto rounded-2xl shadow-lg [-webkit-overflow-scrolling:touch]">
+              <table className="w-full min-w-[760px] border-collapse bg-white text-sm">
+                <thead>
+                  <tr className="bg-[#071A2F]">
+                    <th className="text-left px-6 py-4 font-mono text-xs tracking-widest uppercase text-[#FFD200] w-1/3">Feature</th>
+                    <th className="text-left px-6 py-4 font-mono text-xs tracking-widest uppercase text-[#FFD200] w-1/3">Advantage</th>
+                    <th className="text-left px-6 py-4 font-mono text-xs tracking-widest uppercase text-[#FFD200] w-1/3">Benefit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {FAB_ROWS.map((row, i) => (
+                    <tr
+                      key={i}
+                      className={`border-b border-[#071A2F]/5 hover:bg-[#F4F6F8] transition-colors ${
+                        i % 2 === 0 ? 'bg-white' : 'bg-[#F4F6F8]/50'
+                      }`}
+                    >
+                      <td className="px-6 py-5 text-[#071A2F] font-medium align-top leading-relaxed">{row.feature}</td>
+                      <td className="px-6 py-5 text-[#1F2933]/70 align-top leading-relaxed">{row.advantage}</td>
+                      <td className="px-6 py-5 text-[#00843D] align-top leading-relaxed font-medium">{row.benefit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+            <div className="md:hidden font-mono text-[11px] tracking-wider text-[#00843D] text-center mt-3.5">← swipe to see benefits →</div>
           </FadeUp>
         </div>
       </section>
