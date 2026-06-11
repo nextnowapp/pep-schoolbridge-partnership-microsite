@@ -1,0 +1,77 @@
+/* ============================================================
+   PEP / Pepkor × SchoolBridge — theme tokens
+   Overrides :root from deck.css. Do not edit deck.css.
+   PEP brand: PEP green + gold accent.
+   ============================================================ */
+
+:root{
+  --accent:#00843D; --accent-2:#005C2B; --gold:#FFD200;
+  --accent-soft:rgba(0,132,61,.08); --accent-line:rgba(0,132,61,.24);
+  --navy:#071A2F;
+}
+
+/* ---- deck-specific tweaks -------------------------------- */
+
+/* cover badge: gold on green reads thin — keep gold fill, navy text (default).
+   For PEP wordmark badge ensure strong weight already set in deck.css. */
+
+/* small inline SVG diagrams use brand vars; give them breathing room */
+.diagram { width: 100%; height: auto; display: block; }
+
+/* a tight "spec table" used on the pilot/measurement slides */
+.spec { width: 100%; border-collapse: collapse; font-size: 19px; }
+.spec td { padding: 13px 0; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.4; }
+.spec tr:last-child td { border-bottom: none; }
+.spec td.k { font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); width: 150px; padding-right: 22px; font-weight: 600; }
+.dark .spec td, .brand .spec td { color: rgba(255,255,255,.82); border-color: rgba(255,255,255,.12); }
+.dark .spec td.k, .brand .spec td.k { color: var(--gold); }
+
+/* decision-gate diamond + branch labels for the pilot slide */
+.gate { display:flex; align-items:center; justify-content:center; width:120px; height:120px;
+  transform:rotate(45deg); background:var(--accent); border-radius:14px; margin:0 auto; }
+.gate span { transform:rotate(-45deg); color:#fff; font-weight:700; font-size:18px; text-align:center; line-height:1.15; }
+
+/* compact "live" chip for the asset slide */
+.live { display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace;
+  font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent);
+  background:var(--accent-soft); border:1px solid var(--accent-line); padding:6px 12px; border-radius:999px; font-weight:600; }
+.live::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--accent); }
+
+/* url chip */
+.urlchip { font-family:'IBM Plex Mono',monospace; font-size:16px; color:var(--ink); word-break:break-all; }
+.dark .urlchip, .brand .urlchip { color:#fff; }
+
+/* small caption under charts */
+.cap { font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted); margin-top:14px; }
+.dark .cap, .brand .cap { color:rgba(255,255,255,.6); }
+
+/* scorecard matrix marks */
+.score { width:100%; border-collapse:collapse; font-size:19px; }
+.score th { text-align:center; font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--muted); padding:0 16px 14px; border-bottom:2px solid var(--accent-line); font-weight:600; }
+.score th:first-child { text-align:left; }
+.score th.win { color:var(--accent); }
+.score td { padding:16px; border-bottom:1px solid var(--line); text-align:center; font-size:22px; }
+.score td:first-child { text-align:left; font-weight:600; color:var(--ink); font-size:19px; }
+.score td.win { background:var(--accent-soft); }
+.score tr:last-child td { border-bottom:none; }
+.mk-full { color:var(--accent); } .mk-half { color:var(--muted); } .mk-none { color:var(--line-strong); }
+
+/* staircase / escalating models */
+.stairs { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:end; }
+.step { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:26px 28px; }
+.step.rec { border:2px solid var(--accent); box-shadow:0 12px 34px rgba(0,132,61,.12); }
+.step .sk { font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:600; }
+.step h3 { font-size:22px; font-weight:700; color:var(--ink); margin:8px 0 6px; }
+.step .role { font-size:16px; color:var(--accent); font-weight:600; margin-bottom:14px; }
+.step p { font-size:17px; color:var(--muted); line-height:1.45; margin:0 0 8px; }
+.step.s1 { padding-bottom:26px; } .step.s2 { padding-bottom:46px; } .step.s3 { padding-bottom:66px; }
+
+/* ladder rungs (compounding) */
+.ladder { display:flex; flex-direction:column; gap:12px; }
+.rung { display:grid; grid-template-columns:54px 1fr; gap:18px; align-items:center;
+  background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--accent);
+  border-radius:12px; padding:16px 22px; }
+.rung .num { font-family:'IBM Plex Mono',monospace; font-size:24px; font-weight:700; color:var(--accent); }
+.rung h4 { font-size:19px; font-weight:700; color:var(--ink); margin:0 0 2px; }
+.rung p { font-size:16px; color:var(--muted); margin:0; line-height:1.35; }
