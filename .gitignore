@@ -1,3 +1,5 @@
 node_modules/
 .next/
 out/
+_deckkit/
+.DS_Store
